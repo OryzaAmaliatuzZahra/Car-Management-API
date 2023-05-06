@@ -143,6 +143,11 @@ async function createShop(req, res) {
                 status: 'failed',
                 message: `Shop dengan nama ${name} udah ada nih!`
             })
+        } else if(name.length < 5) {
+            res.status(404).json({
+                status: 'failed',
+                message: `nama shop kurang dari 5 huruf!`
+            })
         } else {
             res.status(201).json({
                 status: 'success',
