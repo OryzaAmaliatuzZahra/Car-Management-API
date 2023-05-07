@@ -5,7 +5,7 @@ const Auth = require('../middleware/auth');
 const checkRole = require('../middleware/checkRole');
 
 
-router.get('/', Auth, userController.getUsers)
+router.get('/', userController.getUsers)
 router.post('/register', userController.createUser)
 router.post('/login', userController.login)
 router.get('/:id', Auth, checkRole('admin'), userController.getUserById)
