@@ -3,7 +3,7 @@ const productController = require('../controller/productController');
 const Auth = require('../middleware/auth');
 
 
-router.get('/', Auth, productController.getProducts)
+router.get('/', productController.getProducts)
 router.get('/search', Auth, productController.searchProduct)
 router.get('/:id', Auth, productController.getProductById)
 router.put('/:id', Auth, productController.editProduct)
